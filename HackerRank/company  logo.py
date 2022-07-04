@@ -1,17 +1,17 @@
 s = input()
-listOfStr = []
-for i in s:
-    listOfStr.append(i)
-listOfStr.sort()
+listOfCharacter = []
+for character in s:
+    listOfCharacter.append(character)
+listOfCharacter.sort()
 
 
 dictOfStr = {}
-for i in listOfStr:
-    number = 0
-    for str in listOfStr:
-        if i == str:
-            number = number + 1
-    dictOfStr[i] = number
+for character in listOfCharacter:
+    if dictOfStr.get(character) is not None:
+        dictOfStr[character] += 1
+    else:
+        dictOfStr[character] = 1
+
 list = []
 for i in dictOfStr:
     list.append(dictOfStr[i])

@@ -1,21 +1,18 @@
-listremove = []
-def inputWords(stdin):
-    listSet = set(stdin)
+dictOFWorde = {}
+
+
+def inputWords(words):
+    listSet = set(words)
     print(len(listSet))
-    for word in stdin:
-        sum = 0
-        case = True
-        for wordRemove in listremove:
-            if word == wordRemove:
-                case = False
-        if case == True:
-            for str in stdin:
-                if str == word:
-                    sum = sum + 1
-            print(sum, end=" ")
-        listremove.append(word)
+    for word in words:
+        dictOFWorde[word] = 0
+    for word in words:
+        if dictOFWorde.get(word) is not None:
+            dictOFWorde[word] += 1
+        else:
+            dictOFWorde[word] = 1
+    for word in dictOFWorde:
+        print(dictOFWorde[word], end=" ")
 
 
-
-words = ["bcdef","abcdefg","bcde","bcdef"]
-inputWords(words)
+inputWords(["moaad", "momo", "mpmp", "moaad", "mama", "momo"])
